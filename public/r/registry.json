@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry.json",
+  "name": "konverto",
+  "homepage": "https://konverto.eu",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:block",
+      "title": "Button Component",
+      "description": "Default button component.",
+      "files": [
+        {
+          "path": "registry/konverto/button/Button.vue",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
