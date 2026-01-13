@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "shadcn-vue build",
+    "build": "pnpm dlx shadcn-vue build --output dist/r",
     "predeploy": "pnpm run build",
-    "deploy": "pnpm dlx gh-pages -d public/r"
+    "deploy": "pnpm dlx gh-pages -d dist/r"
   },
   "dependencies": {
     "vue": "^3.5.24"
