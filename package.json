@@ -1,14 +1,14 @@
 {
-  "name": "ark-component-registry",
+  "name": "konverto-design-system",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "pnpm dlx shadcn-vue build",
+    "build": "vite build && pnpm dlx shadcn-vue build -o dist/public/r",
     "predeploy": "pnpm run build",
-    "deploy": "pnpm dlx gh-pages -d public/r -e public"
+    "deploy": "pnpm dlx gh-pages -d dist"
   },
   "dependencies": {
     "vue": "^3.5.24"

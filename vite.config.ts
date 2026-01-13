@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-  base: "/component-registry-test/",
+  base: "/konverto-design-system/",
   plugins: [vue()],
   resolve: {
     alias: {
