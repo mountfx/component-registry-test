@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build && pnpm dlx shadcn-vue build -o dist/r",
+    "build": "pnpm dlx shadcn-vue build && vite build",
     "predeploy": "pnpm run build",
     "deploy": "pnpm dlx gh-pages -d dist"
   },
