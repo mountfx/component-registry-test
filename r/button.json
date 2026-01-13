@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/konverto/button/Button.vue",
-      "content": "<template>\n  <button><slot name=\"text\" /></button>\n</template>\n\n<style scoped>\nbutton {\n  background-color: tomato;\n  border-radius: 24px;\n  padding: 16px 24px;\n  outline: none;\n  border: unset;\n  font-size: 16px;\n  color: white;\n}\nbutton:focus {\n  background-color: blue;\n}\nbutton:active {\n  background-color: crimson;\n}\n</style>\n",
+      "content": "<template>\n  <button><slot name=\"text\" /></button>\n</template>\n\n<style scoped>\nbutton {\n  background-color: tomato;\n  border-radius: 24px;\n  padding: 24px 32px;\n  outline: none;\n  border: unset;\n  font-size: 16px;\n  color: white;\n}\nbutton:focus {\n  background-color: blue;\n}\nbutton:active {\n  background-color: crimson;\n}\n</style>\n",
       "type": "registry:component"
     }
   ]
