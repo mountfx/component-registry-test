@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "pnpm dlx shadcn-vue build && vite build",
-    "predeploy": "pnpm run build",
+    "build:registry": "pnpm dlx shadcn-vue build",
+    "build": "vite build",
+    "predeploy": "pnpm run build:registry && pnpm run build",
     "deploy": "pnpm dlx gh-pages -d dist"
   },
   "dependencies": {
