@@ -6,7 +6,7 @@
 button {
   background-color: tomato;
   border-radius: 24px;
-  padding: 16px 24px;
+  padding: 24px 32px;
   outline: none;
   border: unset;
   font-size: 16px;
