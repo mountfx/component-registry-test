@@ -4,10 +4,20 @@
   "homepage": "https://konverto.eu",
   "items": [
     {
+      "name": "konverto-globals",
+      "type": "registry:style",
+      "files": [
+        {
+          "path": "registry/konverto/globals.css",
+          "type": "registry:file",
+          "target": "@/styles/globals.css"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:block",
-      "title": "Button Component",
-      "description": "Default button component.",
+      "registryDependencies": ["konverto-globals"],
       "files": [
         {
           "path": "registry/konverto/button/Button.vue",
