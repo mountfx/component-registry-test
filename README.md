@@ -116,13 +116,13 @@ import Combobox from "@/components/combobox/Combobox.vue";
 *Useful links:*
 
 Specification for component registries:
-[](https://www.components.build)
+[https://www.components.build](https://www.components.build)
 
 Specification for JSON Schema:
-[](https://json-schema.org)
+[https://json-schema.org](https://json-schema.org)
 
 CLI Tool used for building and running the component registry:
-[](https://www.shadcn-vue.com)
+[https://www.shadcn-vue.com](https://www.shadcn-vue.com)
 
 Headless UI library:
-[](https://ark-ui.com)
+[https://ark-ui.com](https://ark-ui.com)
