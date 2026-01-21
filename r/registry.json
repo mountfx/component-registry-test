@@ -4,6 +4,16 @@
   "homepage": "https://konverto.eu",
   "items": [
     {
+      "name": "tokens",
+      "type": "registry:style",
+      "files": [
+        {
+          "path": "registry/tokens.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
       "name": "accordion",
       "dependencies": [
         "@ark-ui/vue",
