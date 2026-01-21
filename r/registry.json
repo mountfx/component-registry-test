@@ -9,7 +9,8 @@
       "files": [
         {
           "path": "registry/tokens.css",
-          "type": "registry:style"
+          "type": "registry:file",
+          "target": "~/src/assets/tokens.css"
         }
       ]
     },
