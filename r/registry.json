@@ -1,26 +1,157 @@
 {
   "$schema": "https://shadcn-vue.com/schema/registry.json",
-  "name": "konverto",
+  "name": "konverto-lab-ui",
   "homepage": "https://konverto.eu",
   "items": [
     {
-      "name": "konverto-globals",
-      "type": "registry:style",
+      "name": "accordion",
+      "dependencies": [
+        "@ark-ui/vue",
+        "motion-v"
+      ],
+      "registryDependencies": [
+        "icon"
+      ],
+      "type": "registry:component",
       "files": [
         {
-          "path": "registry/konverto/globals.css",
-          "type": "registry:file",
-          "target": "@/styles/globals.css"
+          "path": "registry/components/accordion/Accordion.vue",
+          "type": "registry:component"
         }
       ]
     },
     {
       "name": "button",
-      "type": "registry:block",
-      "registryDependencies": ["konverto-globals"],
+      "registryDependencies": [
+        "icon"
+      ],
+      "type": "registry:component",
       "files": [
         {
-          "path": "registry/konverto/button/Button.vue",
+          "path": "registry/components/button/Button.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "icon"
+      ],
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/components/checkbox/Checkbox.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "button",
+        "icon"
+      ],
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/components/combobox/Combobox.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "datepicker",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/components/datepicker/DatePicker.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "registryDependencies": [
+        "tokens"
+      ],
+      "files": [
+        {
+          "path": "registry/components/icon/Icon.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/assets/icons.ts",
+          "type": "registry:file",
+          "target": "~/src/assets/icons.ts"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "input",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/components/input/Input.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "button",
+        "icon"
+      ],
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/components/menu/Menu.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "icon"
+      ],
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/components/select/Select.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/components/toggle/Toggle.vue",
           "type": "registry:component"
         }
       ]

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry-item.json",
+  "name": "select",
+  "type": "registry:component",
+  "dependencies": [
+    "@ark-ui/vue"
+  ],
+  "registryDependencies": [
+    "icon"
+  ],
+  "files": [
+    {
+      "path": "registry/components/select/Select.vue",
+      "content": "<script setup lang=\"ts\">\nimport { ref } from \"vue\";\nimport { Field } from \"@ark-ui/vue/field\";\nimport { Presence } from '@ark-ui/vue/presence';\nimport { Select, createListCollection } from '@ark-ui/vue/select';\nimport Icon from \"@/components/icon/Icon.vue\";\n\nconst props = withDefaults(defineProps<{\n  label?: string;\n  help?: string;\n  error?: string;\n  placeholder?: string;\n  multiple?: boolean;\n  size?: \"m\";\n  items: { label: string, value: string, disabled?: boolean }[];\n}>(), {\n  size: \"m\",\n});\n\nconst collection = createListCollection({ items: props.items });\n</script>\n\n<template>\n  <Field.Root class=\"field\">\n    <Field.Label class=\"label\" v-if=\"props.label\">{{ props.label }}</Field.Label>\n    <Select.Root :multiple=\"multiple\" :data-size=\"props.size\" :collection=\"collection\">\n      <Select.Context v-slot=\"context\">\n        <Select.Control>\n          <Select.Trigger class=\"input\" :data-size=\"props.size\" tabindex=\"0\" :data-empty=\"context.empty\">\n            <Select.ValueText :placeholder=\"props.placeholder\" />\n            <Select.Indicator v-if=\"context.empty\" asChild>\n              <Icon icon=\"drop_down\"></Icon>\n            </Select.Indicator>\n            <Select.ClearTrigger v-else asChild>\n              <Icon icon=\"close\"></Icon>\n            </Select.ClearTrigger>\n          </Select.Trigger>\n        </Select.Control>\n        <Presence :present=\"context.open\" lazyMount unmountOnExit>\n          <Teleport to=\"body\">\n            <Select.Positioner>\n              <Select.Content class=\"item-list\" :data-size=\"props.size\">\n                  <Select.Item class=\"item\" v-for=\"item in collection.items\" :key=\"item.value\" :item=\"item\">\n                    <Select.ItemText>{{ item.label }}</Select.ItemText>\n                    <Select.ItemIndicator>\n                      <Icon icon=\"checkmark\"></Icon>\n                    </Select.ItemIndicator>\n                  </Select.Item>\n              </Select.Content>\n            </Select.Positioner>\n          </Teleport>\n        </Presence>\n        <Select.HiddenSelect />\n      </Select.Context>\n    </Select.Root>\n    <Field.HelperText v-if=\"props.help\">{{ props.help }}</Field.HelperText>\n    <Field.ErrorText v-if=\"props.error\">{{ props.error }}</Field.ErrorText>\n  </Field.Root>\n</template>\n\n<style scoped>\n[data-scope=\"select\"] {\n  &[data-placeholder-shown] {\n    color: var(--color-main-3);\n  }\n\n  &[data-part=\"content\"] {\n    width: var(--reference-width);\n  }\n\n  &[data-part=\"item-indicator\"][data-state=\"checked\"] {\n    display: flex;\n  }\n\n  &[data-part=\"trigger\"] {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    cursor: pointer;\n    padding: var(--padding);\n    border-radius: var(--border-radius);\n\n    &[data-empty=\"true\"] {\n      --icon-color: var(--color-main-2);\n    }\n  }\n\n  &[data-part=\"item-text\"] {\n    padding-inline: 4px;\n  }\n\n  &[data-part=\"value-text\"] {\n    padding-inline: 4px;\n    display: inline;\n    width: 100%;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n  }\n}\n</style>\n",
+      "type": "registry:component"
+    }
+  ]
+}
