@@ -78,6 +78,9 @@ or
 npx shadcn-vue@latest add @konverto-lab/button
 ```
 
+Consult the shadcn-vue documentation for a complete list of CLI commands and options:
+[](https://www.shadcn-vue.com/docs/cli)
+
 ---
 
 Add this definition somewhere at the top of your root css:
@@ -107,3 +110,19 @@ Use components by importing them like so:
 ```ts
 import Combobox from "@/components/combobox/Combobox.vue";
 ```
+
+---
+
+*Useful links:*
+
+Specification for component registries:
+[](https://www.components.build)
+
+Specification for JSON Schema:
+[](https://json-schema.org)
+
+CLI Tool used for building and running the component registry:
+[](https://www.shadcn-vue.com)
+
+Headless UI library:
+[](https://ark-ui.com)
