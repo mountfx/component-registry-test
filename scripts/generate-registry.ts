@@ -8,6 +8,19 @@ import * as z from "zod";
 //       time of writing this.
 //       https://zod.dev/json-schema?id=zfromjsonschema
 
+function getTokens() {
+  return [
+    {
+      name: "tokens",
+      type: "registry:style",
+      files: [{
+        path: "registry/tokens.css",
+        type: "registry:style",
+      }],
+    },
+  ];
+}
+
 const FileSchema = z.object({
   path: z.string(),
   type: z.string(),
@@ -17,7 +30,11 @@ const FileSchema = z.object({
 const ComponentSchema = z.object({
   name: z.string(),
   dependencies: z.optional(z.array(z.string())),
-  registryDependencies: z.optional(z.array(z.string().transform((value) => `https://mountfx.github.io/component-registry-test/r/${value}.json`))),
+  registryDependencies: z.optional(
+    z.array(
+      z.string().transform((value) => `https://mountfx.github.io/component-registry-test/r/${value}.json`),
+    ),
+  ),
   files: z.optional(z.array(FileSchema)),
 });
 
@@ -63,6 +80,7 @@ function generateRegistry() {
     name: "konverto-lab-ui",
     homepage: "https://konverto.eu",
     items: [
+      ...getTokens(),
       ...getComponents(),
     ],
   };
