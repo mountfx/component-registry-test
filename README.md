@@ -99,3 +99,9 @@ or reference it directly in your `index.html`:
 </html>
 
 ```
+
+Use closed components by importing them like so:
+
+```ts
+import Combobox from "@/components/combobox/Combobox.vue";
+```
