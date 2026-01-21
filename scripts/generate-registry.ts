@@ -17,7 +17,7 @@ const FileSchema = z.object({
 const ComponentSchema = z.object({
   name: z.string(),
   dependencies: z.optional(z.array(z.string())),
-  registryDependencies: z.optional(z.array(z.string())),
+  registryDependencies: z.optional(z.array(z.string().transform((value) => `https://mountfx.github.io/component-registry-test/r/${value}.json`))),
   files: z.optional(z.array(FileSchema)),
 });
 

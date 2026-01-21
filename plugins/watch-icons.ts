@@ -3,7 +3,7 @@ import { exec } from "node:child_process";
 
 import type { Plugin, ResolvedConfig } from "vite";
 
-export function watchIcons(): Plugin {
+export default function watchIcons(): Plugin {
   let config: ResolvedConfig;
 
   return {
