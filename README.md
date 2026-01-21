@@ -78,7 +78,7 @@ or
 npx shadcn-vue@latest add @konverto-lab/button
 ```
 
-Consult the shadcn-vue documentation for a complete list of CLI commands and options:
+Consult the shadcn-vue documentation for a complete list of CLI commands and options:<br/>
 [https://www.shadcn-vue.com/docs/cli](https://www.shadcn-vue.com/docs/cli)
 
 ---
