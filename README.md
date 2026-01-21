@@ -79,7 +79,7 @@ npx shadcn-vue@latest add @konverto-lab/button
 ```
 
 Consult the shadcn-vue documentation for a complete list of CLI commands and options:
-[](https://www.shadcn-vue.com/docs/cli)
+[https://www.shadcn-vue.com/docs/cli](https://www.shadcn-vue.com/docs/cli)
 
 ---
 
@@ -113,16 +113,16 @@ import Combobox from "@/components/combobox/Combobox.vue";
 
 ---
 
-*Useful links:*
+**Useful links:**
 
-Specification for component registries:
+Specification for component registries:<br/>
 [https://www.components.build](https://www.components.build)
 
-Specification for JSON Schema:
+Specification for JSON Schema:<br/>
 [https://json-schema.org](https://json-schema.org)
 
-CLI Tool used for building and running the component registry:
+CLI Tool used for building and running the component registry:<br/>
 [https://www.shadcn-vue.com](https://www.shadcn-vue.com)
 
-Headless UI library:
+Headless UI library:<br/>
 [https://ark-ui.com](https://ark-ui.com)
