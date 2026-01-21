@@ -14,8 +14,9 @@ function getTokens() {
       name: "tokens",
       type: "registry:style",
       files: [{
-        path: "registry/tokens.css",
-        type: "registry:style",
+        path: "tokens.css",
+        type: "registry:file",
+        target: "~/src/assets/tokens.css",
       }],
     },
   ];
