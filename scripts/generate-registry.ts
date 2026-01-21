@@ -69,7 +69,7 @@ function generateRegistry() {
 
   fs.writeFileSync(path.join(process.cwd(), "registry.json"), JSON.stringify(registry, null, 2));
 
-  console.log("🟢 Generated registry.json");
+  console.log("🟢 Generated registry.json\n");
 }
 
 generateRegistry();
