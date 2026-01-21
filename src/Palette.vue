@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { generateColors } from "../scripts/utils/generate-colors";
 /*
 import { Poline,positionFunctions } from "poline";
 
@@ -15,19 +14,6 @@ const poline = new Poline({
   invertedLightness: true, 
 });
 */
-const athesiaColors = generateColors({
-  appearance: "light",
-  accent: "#F19601",
-  gray: "#777777",
-  background: "#FFFFFF",
-});
-
-const raiffeisenColors = generateColors({
-  appearance: "light",
-  accent: "#FBB900",
-  gray: "#284A51",
-  background: "#FFFFFF",
-});
 
 const colors = [
   "var(--color-cinder-1)",
@@ -43,7 +29,6 @@ const colors = [
   "var(--color-cinder-11)",
   "var(--color-cinder-12)",
 ];
-console.log(athesiaColors);
 </script>
 
 <template>
