@@ -10,6 +10,5 @@ const props = defineProps(["icon"]);
 </script>
 
 <template>
-  <span />
-  <!-- <span data-scope="icon" v-html="icon[props.icon]"></span> -->
+  <span data-scope="icon" v-html="icon[props.icon]"></span>
 </template>

@@ -5,7 +5,7 @@ import Accordion from "@/components/accordion/Accordion.vue";
 import Select from "@/components/select/Select.vue";
 import Icon from "@/components/icon/Icon.vue";
 import Menu from "@/components/menu/Menu.vue";
-import Combobox from "@/components/combobox/Combobox.vue";
+/* import Combobox from "@/components/combobox/Combobox.vue"; */
 import Checkbox from "@/components/checkbox/Checkbox.vue";
 
 import Chat from "@/blocks/Chat.vue";
@@ -109,11 +109,11 @@ const menuItems = [
           <Input style="width: 100%" label="Input" size="m" placeholder="I am a placeholder" error="hello" />
           <Input style="width: 100%" label="Input" size="l" placeholder="I am a placeholder" error="hello" />
         </div>
-        <div class="ds-combobox">
-          <Combobox label="Combobox" size="s" />
-          <Combobox label="Combobox" size="m" />
-          <Combobox label="Combobox" size="l"/>
-        </div>
+        <!-- <div class="ds-combobox"> -->
+          <!-- <Combobox label="Combobox" size="s" /> -->
+          <!-- <Combobox label="Combobox" size="m" /> -->
+          <!-- <Combobox label="Combobox" size="l"/> -->
+        <!-- </div> -->
         <Palette />
       </div>
     </template>
