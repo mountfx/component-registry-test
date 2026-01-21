@@ -3,7 +3,7 @@
   "name": "button",
   "type": "registry:component",
   "registryDependencies": [
-    "icon"
+    "https://mountfx.github.io/component-registry-test/r/icon.json"
   ],
   "files": [
     {

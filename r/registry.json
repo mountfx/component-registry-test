@@ -10,7 +10,7 @@
         "motion-v"
       ],
       "registryDependencies": [
-        "icon"
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
       "type": "registry:component",
       "files": [
@@ -23,7 +23,7 @@
     {
       "name": "button",
       "registryDependencies": [
-        "icon"
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
       "type": "registry:component",
       "files": [
@@ -39,7 +39,7 @@
         "@ark-ui/vue"
       ],
       "registryDependencies": [
-        "icon"
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
       "type": "registry:component",
       "files": [
@@ -55,8 +55,8 @@
         "@ark-ui/vue"
       ],
       "registryDependencies": [
-        "button",
-        "icon"
+        "https://mountfx.github.io/component-registry-test/r/button.json",
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
       "type": "registry:component",
       "files": [
@@ -69,7 +69,7 @@
     {
       "name": "icon",
       "registryDependencies": [
-        "tokens"
+        "https://mountfx.github.io/component-registry-test/r/tokens.json"
       ],
       "files": [
         {
@@ -103,8 +103,8 @@
         "@ark-ui/vue"
       ],
       "registryDependencies": [
-        "button",
-        "icon"
+        "https://mountfx.github.io/component-registry-test/r/button.json",
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
       "type": "registry:component",
       "files": [
@@ -120,7 +120,7 @@
         "@ark-ui/vue"
       ],
       "registryDependencies": [
-        "icon"
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
       "type": "registry:component",
       "files": [

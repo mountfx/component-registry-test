@@ -6,7 +6,7 @@
     "@ark-ui/vue"
   ],
   "registryDependencies": [
-    "icon"
+    "https://mountfx.github.io/component-registry-test/r/icon.json"
   ],
   "files": [
     {
