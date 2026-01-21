@@ -67,19 +67,6 @@
       ]
     },
     {
-      "name": "datepicker",
-      "dependencies": [
-        "@ark-ui/vue"
-      ],
-      "type": "registry:component",
-      "files": [
-        {
-          "path": "registry/components/datepicker/DatePicker.vue",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
       "name": "icon",
       "registryDependencies": [
         "tokens"

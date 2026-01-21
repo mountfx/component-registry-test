@@ -7,7 +7,6 @@ import Icon from "@/components/icon/Icon.vue";
 import Menu from "@/components/menu/Menu.vue";
 import Combobox from "@/components/combobox/Combobox.vue";
 import Checkbox from "@/components/checkbox/Checkbox.vue";
-import DatePicker from "@/components/datepicker/DatePicker.vue";
 
 import Chat from "@/blocks/Chat.vue";
 import NavDrawer from "@/blocks/NavDrawer.vue";
@@ -97,7 +96,6 @@ const menuItems = [
         </Accordion>
         <Chat :onSubmit="(text) => console.log(text)" />
         <Button style="width: auto;" iconPrefix="chat" iconPostfix="drop_down" align="space-between">Hello</Button>
-        <DatePicker />
         <div class="ds-checkbox">
           <Checkbox size="s" />
         </div>
