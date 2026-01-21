@@ -1,0 +1,4 @@
+{
+  "name": "toggle",
+  "dependencies": ["@ark-ui/vue"]
+}

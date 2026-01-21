@@ -1,0 +1,4 @@
+{
+  "name": "datepicker",
+  "dependencies": ["@ark-ui/vue"]
+}

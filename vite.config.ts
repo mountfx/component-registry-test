@@ -1,14 +1,18 @@
 import path from "node:path";
 import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
+
 import vue from "@vitejs/plugin-vue";
+import { watchIcons } from "./plugins/watch-icons";
 
 export default defineConfig({
   base: "/component-registry-test/",
-  plugins: [vue(), tailwindcss()],
+  build: {
+    target: "es2015",
+  },
+  plugins: [vue(), watchIcons()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src")
+      "@": path.resolve(__dirname, "./registry")
     } 
   }
 })

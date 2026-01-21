@@ -6,23 +6,32 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build:registry": "pnpm dlx shadcn-vue build",
+    "generate:registry": "node scripts/generate-registry.ts",
+    "generate:icons": "node scripts/generate-icons.ts",
+    "build:registry": "pnpm run generate:registry && shadcn-vue build",
     "build": "vite build",
-    "predeploy": "pnpm run build:registry && pnpm run build",
-    "deploy": "pnpm dlx gh-pages -d dist"
+    "predeploy": "node scripts/generate-icons.ts && pnpm run build:registry && pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "tailwindcss": "^4.1.18",
+    "@ark-ui/vue": "^5.30.0",
+    "@radix-ui/colors": "^3.0.0",
+    "bezier-easing": "^2.1.0",
+    "colorjs.io": "^0.6.1",
+    "motion-v": "^1.9.0",
+    "poline": "^0.13.0",
     "vue": "^3.5.24"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",
+    "gh-pages": "^6.3.0",
+    "shadcn-vue": "^2.4.3",
     "typescript": "~5.9.3",
     "vite": "npm:rolldown-vite@7.2.5",
-    "vue-tsc": "^3.1.4"
+    "vue-tsc": "^3.1.4",
+    "zod": "^4.3.5"
   },
   "pnpm": {
     "overrides": {
