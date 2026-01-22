@@ -1,7 +1,7 @@
 {
   "$schema": "https://shadcn-vue.com/schema/registry-item.json",
   "name": "accordion",
-  "type": "registry:component",
+  "type": "registry:ui",
   "dependencies": [
     "@ark-ui/vue",
     "motion-v"
@@ -13,7 +13,7 @@
     {
       "path": "registry/components/ui/accordion/Accordion.vue",
       "content": "<script setup lang=\"ts\">\nimport { ref } from 'vue';\n\nimport { AnimatePresence, motion } from \"motion-v\";\n\nimport { useForwardProps } from \"@ark-ui/vue\";\nimport { Accordion } from '@ark-ui/vue/accordion';\n\nimport Icon from \"@/components/ui/icon/Icon.vue\";\n\ninterface Props {\n  items: { title: string; description: string };  \n}\n\nconst props = defineProps<Props>();\n\nconst forwarded = useForwardProps(props);\n</script>\n\n<template>\n  <Accordion.Root>\n      <Accordion.Item v-for=\"item in props.items\" :key=\"item.title\" :value=\"item.title\">\n        <Accordion.ItemContext v-slot=\"context\">\n          <Accordion.ItemTrigger tabindex=\"0\">\n            <span>\n              <slot name=\"header\" :item=\"item\" />\n            </span>\n            <Accordion.ItemIndicator asChild>\n              <Icon :icon=\"context.expanded ? 'drop-up' : 'drop-down'\" />\n            </Accordion.ItemIndicator>\n          </Accordion.ItemTrigger>\n          <AnimatePresence>\n            <motion.div\n              style=\"overflow: hidden;\"\n              layout\n              v-if=\"context.expanded\"\n              :transition=\"{ type: 'spring', stiffness: 400, damping: 40 }\"\n              :initial=\"{ height: '0px' }\"\n              :animate=\"{ height: 'auto' }\"\n              :exit=\"{ height: '0px' }\">\n              <Accordion.ItemContent>\n                <slot name=\"content\" :item=\"item\" />\n              </Accordion.ItemContent>\n            </motion.div>\n          </AnimatePresence>\n        </Accordion.ItemContext>\n      </Accordion.Item>\n  </Accordion.Root>\n</template>\n\n<style scoped>\n[data-scope=\"accordion\"] {\n  &[data-part=\"item\"] {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n    border-bottom: 1px solid var(--color-main-5);\n\n    &[data-focus] {\n      outline: none;\n    \n      &::before, &::after {\n        content: \"\";\n        position: absolute;\n        height: 1px;\n        width: 100%;\n        background-color: var(--color-main-3);\n      }\n\n      &::before {\n        top: -1px;\n      }\n\n      &::after {\n        bottom: -1px;\n      }\n\n      & [data-part=\"item-indicator\"] {\n        --icon-color: var(--color-main);\n      }\n    }\n\n    &:first-of-type {\n      border-top: 1px solid var(--color-main-5);\n    }\n  }\n\n  \n  &[data-part=\"item-trigger\"] {\n    outline: none;\n    background-color: transparent;\n    border: none;\n    padding: 12px 0px;\n    text-align: left;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    cursor: pointer;\n\n    &:hover {\n      & [data-part=\"item-indicator\"] {\n        --icon-color: var(--color-main);\n      }\n    }\n  }\n\n  &[data-part=\"item-content\"] {\n    padding-block: 12px;\n  }\n\n  &[data-part=\"item-indicator\"] {\n    --icon-color: var(--color-main-3);\n  }\n}\n</style>\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ]
 }

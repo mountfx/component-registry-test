@@ -1,7 +1,7 @@
 {
   "$schema": "https://shadcn-vue.com/schema/registry-item.json",
   "name": "icon",
-  "type": "registry:component",
+  "type": "registry:ui",
   "registryDependencies": [
     "https://mountfx.github.io/component-registry-test/r/tokens.json"
   ],
@@ -9,7 +9,7 @@
     {
       "path": "registry/components/ui/icon/Icon.vue",
       "content": "<script setup lang=\"ts\">\nimport { ref, watchEffect } from \"vue\";\nimport { icon, type Icon } from \"@/assets/icons.ts\";\n\ninterface Props {\n  icon: Icon; \n};\n\nconst props = defineProps([\"icon\"]);\n</script>\n\n<template>\n  <span data-scope=\"icon\" v-html=\"icon[props.icon]\"></span>\n</template>\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     },
     {
       "path": "registry/assets/icons.ts",

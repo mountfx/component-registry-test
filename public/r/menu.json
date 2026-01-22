@@ -1,7 +1,7 @@
 {
   "$schema": "https://shadcn-vue.com/schema/registry-item.json",
   "name": "menu",
-  "type": "registry:component",
+  "type": "registry:ui",
   "dependencies": [
     "@ark-ui/vue"
   ],
@@ -13,7 +13,7 @@
     {
       "path": "registry/components/ui/menu/Menu.vue",
       "content": "<script setup lang=\"ts\">\nimport { Presence } from \"@ark-ui/vue/presence\";\nimport { Menu } from \"@ark-ui/vue/menu\";\n\nimport Button from \"@/components/ui/button/Button.vue\";\nimport Icon from \"@/components/ui/icon/Icon.vue\";\n\ninterface Item {\n  label: string;\n  value: string;\n  icon?: string;\n  items?: Item[];\n};\n\ninterface Props {\n  items: Item[];\n  size?: \"l\" | \"m\" | \"s\";\n  variant?: \"solid\" | \"subtle\" | \"surface\" | \"outline\" | \"plain\";\n  align?: \"center\" | \"space-between\";\n  iconPrefix?: string;\n  iconPostfix?: string;\n  text?: string;\n};\n\nconst props = defineProps<Props>();\n</script>\n\n<template>\n  <Menu.Root>\n    <Menu.Context v-slot=\"context\">\n      <Menu.Trigger asChild>\n        <Button v-if=\"props.text\" v-bind=\"props\">\n          {{ props.text }}\n        </Button>\n        <Button v-else v-bind=\"props\" />\n      </Menu.Trigger>\n      <Menu.Positioner>\n        <Menu.Content class=\"item-list\" :data-size=\"props.size\">\n          <template v-for=\"item in props.items\" :key=\"item.value\">\n            <Menu.Root v-if=\"item.items\">\n              <Menu.TriggerItem class=\"item\">\n                <Icon v-if=\"item.icon\" :icon=\"item.icon\" />\n                <span class=\"item-text\">{{ item.label }}</span>\n                <Icon class=\"icon-drop-right\" icon=\"drop-right\" />\n              </Menu.TriggerItem>\n              <Presence :present=\"context.open\" lazyMount unmountOnExit>\n                <Teleport to=\"body\">\n                  <Menu.Positioner>\n                    <Menu.Content class=\"item-list\" :data-size=\"props.size\">\n                      <Menu.Item\n                        class=\"item\"\n                        v-for=\"item in item.items\"\n                        :key=\"item.label\"\n                        :value=\"item.value\">\n                        <Icon v-if=\"item.icon\" :icon=\"item.icon\" />\n                        <span class=\"item-text\">{{ item.label }}</span>\n                      </Menu.Item>\n                    </Menu.Content>\n                  </Menu.Positioner>\n                </Teleport>\n              </Presence>\n            </Menu.Root>\n            <Menu.Item class=\"item\" v-else :value=\"item.value\">\n              <Icon v-if=\"item.icon\" :icon=\"item.icon\" />\n              <span class=\"item-text\">{{ item.label }}</span>\n            </Menu.Item>\n          </template>\n        </Menu.Content>\n      </Menu.Positioner>\n    </Menu.Context>\n  </Menu.Root>\n</template>\n\n<style scoped>\n[data-scope=\"menu\"][data-part=\"content\"] {\n  &[data-size=\"s\"], [data-size=\"s\"] & {\n    min-width: 128px;\n  }\n\n  &[data-size=\"m\"], [data-size=\"m\"] & {\n    min-width: 192px;\n  }\n\n  &[data-size=\"l\"], [data-size=\"l\"] & {\n    min-width: 256px;\n  }\n}\n\n[data-scope=\"menu\"][data-part=\"trigger\"][data-state=\"open\"] {\n  background-color: var(--color-main-4);    \n}\n\n.icon-drop-right {\n  --icon-color: var(--color-main-3);\n}\n\n.item-text {\n  width: 100%;\n  padding-inline: 4px;\n}\n</style>\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ]
 }

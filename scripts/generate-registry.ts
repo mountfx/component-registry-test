@@ -60,13 +60,13 @@ async function getUiComponent(folder: fs.Dirent) {
     const definition = ComponentSchema.parse(module.default);
     return {
       name: definition.name,
-      type: "registry:component",
+      type: "registry:ui",
       dependencies: definition.dependencies,
       registryDependencies: definition.registryDependencies,
       files: [
         {
           path: path.join("registry/components/ui", folder.name, componentFile),
-          type: "registry:component",
+          type: "registry:ui",
         },
         ...(definition.files || []),
       ],
