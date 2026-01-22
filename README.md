@@ -135,5 +135,8 @@ Specification for JSON Schema:<br/>
 CLI Tool used for building and running the component registry:<br/>
 [https://www.shadcn-vue.com](https://www.shadcn-vue.com)
 
+The component library shadcn-vue is based on:<br/>
+[https://ui.shadcn.com](https://ui.shadcn.com)
+
 Headless UI library:<br/>
 [https://ark-ui.com](https://ark-ui.com)
