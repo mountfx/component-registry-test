@@ -4,7 +4,7 @@ export default {
   registryDependencies: ["tokens"],
   files: [
     {
-      path: "registry/assets/icons.ts",
+      path: "assets/icons.ts",
       type: "registry:file",
       target: "~/src/assets/icons.ts",
     },

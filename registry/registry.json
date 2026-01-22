@@ -1,0 +1,158 @@
+{
+  "$schema": "https://shadcn-vue.com/schema/registry.json",
+  "name": "konverto-lab-ui",
+  "homepage": "https://konverto.eu",
+  "items": [
+    {
+      "name": "tokens",
+      "type": "registry:style",
+      "files": [
+        {
+          "path": "tokens.css",
+          "type": "registry:file",
+          "target": "~/src/assets/tokens.css"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "dependencies": [
+        "@ark-ui/vue",
+        "motion-v"
+      ],
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/accordion/Accordion.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button/Button.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox/Checkbox.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:component",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/button.json",
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/combobox/Combobox.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/tokens.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/icon/Icon.vue",
+          "type": "registry:component"
+        },
+        {
+          "path": "assets/icons.ts",
+          "type": "registry:file",
+          "target": "~/src/assets/icons.ts"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input/Input.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:component",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/button.json",
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/menu/Menu.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select/Select.vue",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:component",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle/Toggle.vue",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
