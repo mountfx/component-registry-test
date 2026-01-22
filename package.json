@@ -10,7 +10,7 @@
     "generate:icons": "node scripts/generate-icons.ts",
     "generate:registry": "node scripts/generate-registry.ts",
     "build:registry": "pnpm run generate:registry && shadcn-vue build",
-    "predeploy": "pnpm run build",
+    "predeploy": "pnpm run generate:icons && pnpm run generate:registry && pnpm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
