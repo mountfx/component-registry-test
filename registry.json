@@ -15,6 +15,23 @@
       ]
     },
     {
+      "name": "chat",
+      "type": "registry:block",
+      "dependencies": [
+        "@ark-ui/vue"
+      ],
+      "registryDependencies": [
+        "https://mountfx.github.io/component-registry-test/r/button.json",
+        "https://mountfx.github.io/component-registry-test/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/components/blocks/chat/Chat.vue",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
       "name": "accordion",
       "type": "registry:ui",
       "dependencies": [
