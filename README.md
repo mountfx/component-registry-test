@@ -89,7 +89,7 @@ Consult the shadcn-vue documentation for a complete list of CLI commands and opt
 
 ## Usage
 
-Then use UI components by importing them like so:
+Use components by importing them like so:
 
 ```ts
 // UI components reside in the @/components/ui folder.
