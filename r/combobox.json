@@ -1,7 +1,7 @@
 {
   "$schema": "https://shadcn-vue.com/schema/registry-item.json",
   "name": "combobox",
-  "type": "registry:component",
+  "type": "registry:ui",
   "dependencies": [
     "@ark-ui/vue"
   ],
@@ -11,9 +11,9 @@
   ],
   "files": [
     {
-      "path": "components/ui/combobox/Combobox.vue",
+      "path": "registry/components/ui/combobox/Combobox.vue",
       "content": "<script setup lang=\"ts\">\nimport { Presence } from \"@ark-ui/vue/presence\";\nimport { Combobox, useListCollection } from '@ark-ui/vue/combobox';\nimport { useFilter } from '@ark-ui/vue/locale';\n\nimport Button from \"@/components/ui/button/Button.vue\";\nimport Icon from \"@/components/ui/icon/Icon.vue\";\n\nconst filters = useFilter({ sensitivity: 'base' });\n\nconst { collection, filter } = useListCollection({\n  initialItems: ['React', 'Solid', 'Vue', 'Svelte'],\n  filter: filters.value.contains,\n});\n\nconst handleInputChange = (details: Combobox.InputValueChangeDetails) => {\n  filter(details.inputValue)\n};\n\nconst props = withDefaults(defineProps<{\n  size: \"s\" | \"m\" | \"l\",\n  label?: string,\n}>(), {\n  size: \"m\",\n});\n</script>\n\n<template>\n  <Combobox.Root\n    class=\"field\"\n    inputBehavior=\"autohighlight\"\n    :data-size=\"props.size\"\n    :collection=\"collection\"\n    @input-value-change=\"handleInputChange\">\n    <Combobox.Context v-slot=\"context\">\n      <Combobox.Label class=\"label\" v-if=\"props.label\">{{ props.label }}</Combobox.Label>\n      <Combobox.Control class=\"input\">\n        <Combobox.Input placeholder=\"Select a framework\" />\n        <Combobox.ClearTrigger v-if=\"context.hasSelectedItems\" asChild>\n          <Icon icon=\"close\" class=\"interactive-label\" :class=\"{ empty: context.hasSelectedItems }\"></Icon>\n          <!-- <Button variant=\"transparent\" :size=\"props.size\" iconPrefix=\"close\" /> -->\n        </Combobox.ClearTrigger>\n        <Combobox.Trigger v-else asChild>\n          <Icon icon=\"drop-down\" class=\"interactive-label\"></Icon>\n          <!-- <Button variant=\"transparent\" :size=\"props.size\" iconPrefix=\"drop-down\" /> -->\n        </Combobox.Trigger>\n      </Combobox.Control>\n      <Presence :present=\"context.open\" lazyMount unmountOnExit>\n        <Teleport to=\"body\">\n          <Combobox.Positioner>\n            <Combobox.Content class=\"item-list\" :data-size=\"props.size\">\n              <Combobox.Item class=\"item\" v-for=\"item in collection.items\" :key=\"item\" :item=\"item\">\n                <Combobox.ItemText>{{ item }}</Combobox.ItemText>\n                <Combobox.ItemIndicator><Icon icon=\"checkmark\"></Icon></Combobox.ItemIndicator>\n              </Combobox.Item>\n            </Combobox.Content>\n          </Combobox.Positioner>\n        </Teleport>\n      </Presence>\n    </Combobox.Context>\n  </Combobox.Root>\n</template>\n\n<style scoped>\n[data-scope=\"presence\"] {\n  &[data-part=\"root\"] {\n    display: contents;\n  }\n}\n[data-scope=\"combobox\"] {\n  &[data-part=\"control\"] {\n    border-radius: var(--border-radius);\n    display: inline-flex;\n    justify-content: space-between;\n    padding: var(--padding);\n\n    .empty {\n      --icon-color: var(--color-main);\n    }\n  }\n\n  &[data-part=\"trigger\"], &[data-part=\"clear-trigger\"] {\n    position: relative;\n    cursor: pointer;\n    --icon-color: var(--color);\n\n    &::before {\n      content: \"\";\n      position: absolute;\n      left: calc(var(--padding) * -1);\n      top: calc(var(--padding) * -1);\n      right: calc(var(--padding) * -1);\n      bottom: calc(var(--padding) * -1);\n    }\n  }\n\n  &[data-part=\"input\"] {\n    background-color: transparent;\n    width: 100%;\n    border: none;\n    outline: none;\n    padding-inline: 4px;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n  }\n\n  &[data-part=\"item-text\"] {\n    padding-inline: 4px;\n  }\n\n  &[data-part=\"item-indicator\"][data-state=\"checked\"] {\n    display: flex;\n  }\n\n  &[data-part=\"content\"][data-empty] {\n    display: none;\n  }\n}\n</style>\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ]
 }

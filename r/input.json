@@ -1,15 +1,15 @@
 {
   "$schema": "https://shadcn-vue.com/schema/registry-item.json",
   "name": "input",
-  "type": "registry:component",
+  "type": "registry:ui",
   "dependencies": [
     "@ark-ui/vue"
   ],
   "files": [
     {
-      "path": "components/ui/input/Input.vue",
+      "path": "registry/components/ui/input/Input.vue",
       "content": "<script setup lang=\"ts\">\nimport { useForwardProps } from \"@ark-ui/vue\";\nimport { Field, type FieldRootProps } from \"@ark-ui/vue/field\";\n\ntype Props = {\n  size?: \"l\" | \"m\" | \"s\";\n  label?: string;\n  help?: string;\n  error?: string;\n  placeholder?: string;\n};\n\nconst props = withDefaults(defineProps<Props>(), {\n  size: \"m\",\n});\n\nconst forwarded = useForwardProps(props);\n</script>\n\n<template>\n  <Field.Root class=\"field\" v-bind=\"forwarded\">\n    <Field.Label class=\"label\" v-if=\"props.label\">{{ props.label }}</Field.Label>\n    <Field.Input class=\"input\" :data-size=\"props.size\" :placeholder=\"props.placeholder\" />\n    <Field.HelperText v-if=\"props.help\">{{ props.help }}</Field.HelperText>\n    <Field.ErrorText v-if=\"props.error\">{{ props.error }}</Field.ErrorText>\n  </Field.Root>\n</template>\n\n<style scoped>\n[data-scope=\"field\"] {\n  padding-block: var(--padding);\n  padding-inline: calc(var(--padding) + 4px);\n\n  &[data-part=\"input\"] {\n    text-overflow: ellipsis;\n    overflow: hidden;\n    white-space: nowrap;\n    border-radius: var(--border-radius);\n  }\n}\n</style>\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ]
 }
