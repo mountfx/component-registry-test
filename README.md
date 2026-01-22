@@ -78,6 +78,9 @@ or
 npx shadcn-vue@latest add @konverto-lab/button
 ```
 
+Consult the shadcn-vue documentation for a complete list of CLI commands and options:<br/>
+[https://www.shadcn-vue.com/docs/cli](https://www.shadcn-vue.com/docs/cli)
+
 ---
 
 Then use UI components by importing them like so:
@@ -96,11 +99,6 @@ You may still customize their behavior or styling by modifying the top-level com
 All other components, such as `blocks` or `pages`, are intended to be added directly to the
 project source for modification. Their content is usually hardcoded and serves as a default
 or placeholder that can be replaced or extended.
-
----
-
-Consult the shadcn-vue documentation for a complete list of CLI commands and options:<br/>
-[https://www.shadcn-vue.com/docs/cli](https://www.shadcn-vue.com/docs/cli)
 
 ---
 
