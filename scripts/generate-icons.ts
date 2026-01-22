@@ -4,7 +4,7 @@ import path from "node:path";
 function generateIcons() {
   const cwd = process.cwd();
   const inputDir = path.join(cwd, "src/assets/icons");
-  const outputFile = path.join(cwd, "assets/icons.ts");
+  const outputFile = path.join(cwd, "registry/assets/icons.ts");
 
   const result: string[] = [];
   result.push("export const icon = {\n");
