@@ -8,7 +8,7 @@
       "type": "registry:style",
       "files": [
         {
-          "path": "registry/tokens.css",
+          "path": "tokens.css",
           "type": "registry:file",
           "target": "~/src/assets/tokens.css"
         }
@@ -26,7 +26,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/accordion/Accordion.vue",
+          "path": "components/ui/accordion/Accordion.vue",
           "type": "registry:component"
         }
       ]
@@ -39,7 +39,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/button/Button.vue",
+          "path": "components/ui/button/Button.vue",
           "type": "registry:component"
         }
       ]
@@ -55,7 +55,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/checkbox/Checkbox.vue",
+          "path": "components/ui/checkbox/Checkbox.vue",
           "type": "registry:component"
         }
       ]
@@ -72,7 +72,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/combobox/Combobox.vue",
+          "path": "components/ui/combobox/Combobox.vue",
           "type": "registry:component"
         }
       ]
@@ -85,11 +85,11 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/icon/Icon.vue",
+          "path": "components/ui/icon/Icon.vue",
           "type": "registry:component"
         },
         {
-          "path": "registry/assets/icons.ts",
+          "path": "assets/icons.ts",
           "type": "registry:file",
           "target": "~/src/assets/icons.ts"
         }
@@ -103,7 +103,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/input/Input.vue",
+          "path": "components/ui/input/Input.vue",
           "type": "registry:component"
         }
       ]
@@ -120,7 +120,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/menu/Menu.vue",
+          "path": "components/ui/menu/Menu.vue",
           "type": "registry:component"
         }
       ]
@@ -136,7 +136,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/select/Select.vue",
+          "path": "components/ui/select/Select.vue",
           "type": "registry:component"
         }
       ]
@@ -149,7 +149,7 @@
       ],
       "files": [
         {
-          "path": "registry/components/ui/toggle/Toggle.vue",
+          "path": "components/ui/toggle/Toggle.vue",
           "type": "registry:component"
         }
       ]

@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/components/ui/toggle/Toggle.vue",
+      "path": "components/ui/toggle/Toggle.vue",
       "content": "<script setup lang=\"ts\">\nimport { Toggle } from \"@ark-ui/vue/toggle\";\nimport { ref } from \"vue\";\n\nconst pressed = ref(false);\n</script>\n\n<template>\n  <Toggle.Root asChild v-model:pressed=\"pressed\">\n    <slot v-if=\"pressed\" name=\"on\" />\n    <slot v-else name=\"off\" />\n  </Toggle.Root>\n</template>\n",
       "type": "registry:component"
     }
