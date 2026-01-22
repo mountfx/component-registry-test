@@ -44,7 +44,7 @@ Add the following `components.json` file to your projects root directory:
 ```json
 {
   "$schema": "https://shadcn-vue.com/schema.json",
-  "style": "new-york",
+  "style": "konverto-lab",
   "typescript": true,
   "tailwind": {
     "config": "",
