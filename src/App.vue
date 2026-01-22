@@ -8,7 +8,7 @@ import Menu from "@/components/ui/menu/Menu.vue";
 import Combobox from "@/components/ui/combobox/Combobox.vue";
 import Checkbox from "@/components/ui/checkbox/Checkbox.vue";
 
-import Chat from "@/components/blocks/Chat.vue";
+import Chat from "@/components/blocks/chat/Chat.vue";
 import NavDrawer from "@/components/blocks/NavDrawer.vue";
 
 import Layout from "@/components/Layout.vue";

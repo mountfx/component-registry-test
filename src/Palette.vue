@@ -98,7 +98,7 @@ section {
 }
 
 .palette {
-  border-radius: 40px;
+  border-radius: 24px;
   overflow: clip;
 }
 
