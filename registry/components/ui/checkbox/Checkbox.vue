@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Checkbox } from '@ark-ui/vue/checkbox';
 
-import Icon from "@/components/icon/Icon.vue";
+import Icon from "@/components/ui/icon/Icon.vue";
 
 const props = withDefaults(defineProps<{
   size?: "s" | "m" | "l",
@@ -25,14 +25,17 @@ const props = withDefaults(defineProps<{
 <style scoped>
 
 [data-scope="checkbox"] {
-  --background-color: var(--color-main-5);
-
   &[data-part="root"] {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
     width: fit-content;
+    --background-color: var(--color-main-5);
+
+    &:hover {
+      --background-color: var(--color-main-3);    
+    }
   }
 
   &[data-size="s"] {
@@ -47,10 +50,6 @@ const props = withDefaults(defineProps<{
     --size: 28px;
   }
 
-  &:hover {
-    --background-color: var(--color-main-3);    
-  }
-
   &[data-part="indicator"] {
     &[data-state="checked"] {
       display: flex;
@@ -59,6 +58,10 @@ const props = withDefaults(defineProps<{
 
   &[data-part="label"] {
     display: inline;
+
+    &[data-state="checked"] {
+      color: var(--color-main);
+    }
   }
 
   &[data-part="control"] {
@@ -73,17 +76,16 @@ const props = withDefaults(defineProps<{
     justify-content: center;
     --icon-color: var(--color-main-7);
 
-    &[data-focus], &[data-focus-visible] {
-      background-color: var(--color-main-7);
-      box-shadow: inset 0 0 0 1px var(--color-main-3), 0 0 0 4px var(--color-main-6);
-
-      &[data-state="checked"] {
-        box-shadow: 0 0 0 4px var(--color-main-5);
-      }
+    &[data-focus-visible] {
+      --background-color: var(--color-main-4);
+      box-shadow: 0 0 0 4px var(--color-main-6);
     }
 
     &[data-state="checked"] {
-      background-color: var(--color-main);
+      --background-color: var(--color-main);
+      &[data-focus-visible] {
+        box-shadow: 0 0 0 4px var(--color-main-5);
+      }
     }
   }
 }

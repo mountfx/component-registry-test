@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icon from "@/components/icon/Icon.vue";
+import Icon from "@/components/ui/icon/Icon.vue";
 
 type Props = {
   size?: "l" | "m" | "s";
@@ -112,6 +112,7 @@ button {
 
     &:focus-visible {
       --background-color: var(--color-main-1);
+      box-shadow: 0 0 0 4px var(--color-main-5);
     }
 
     &:active {
@@ -138,6 +139,7 @@ button {
 
     &:focus-visible {
       --background-color: var(--color-main-4);
+      box-shadow: 0 0 0 4px var(--color-main-6);
     }
 
     &:active {
@@ -227,7 +229,7 @@ button {
   }
 
   &[data-variant="transparent"] {
-    --color: var(--color-main-2);
+    --color: var(--color-main-1);
     --icon-color: var(--color);
 
     color: var(--color);

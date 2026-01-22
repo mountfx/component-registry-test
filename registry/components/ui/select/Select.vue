@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { Field } from "@ark-ui/vue/field";
 import { Presence } from '@ark-ui/vue/presence';
 import { Select, createListCollection } from '@ark-ui/vue/select';
-import Icon from "@/components/icon/Icon.vue";
+import Icon from "@/components/ui/icon/Icon.vue";
 
 const props = withDefaults(defineProps<{
   label?: string;
@@ -29,7 +29,7 @@ const collection = createListCollection({ items: props.items });
           <Select.Trigger class="input" :data-size="props.size" tabindex="0" :data-empty="context.empty">
             <Select.ValueText :placeholder="props.placeholder" />
             <Select.Indicator v-if="context.empty" asChild>
-              <Icon icon="drop_down"></Icon>
+              <Icon icon="drop-down"></Icon>
             </Select.Indicator>
             <Select.ClearTrigger v-else asChild>
               <Icon icon="close"></Icon>

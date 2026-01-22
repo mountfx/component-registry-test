@@ -1,4 +1,0 @@
-{
-  "name": "input",
-  "dependencies": ["@ark-ui/vue"]
-}

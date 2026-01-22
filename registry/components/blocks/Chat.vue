@@ -2,8 +2,8 @@
 import { ref } from "vue";
 import { Field } from '@ark-ui/vue/field';
 
-import Button from "@/components/button/Button.vue";
-import Toggle from "@/components/toggle/Toggle.vue";
+import Button from "@/components/ui/button/Button.vue";
+import Toggle from "@/components/ui/toggle/Toggle.vue";
 
 const text = ref("");
 
@@ -33,7 +33,7 @@ function handleSubmit(e: KeyboardEvent) {
             <Button variant="subtle" size="s" iconPrefix="web">Search</Button>
           </template>
         </Toggle>
-        <Button variant="transparent" size="s" iconPrefix="attach_file">Attach</Button>
+        <Button variant="transparent" size="s" iconPrefix="attach-file">Attach</Button>
       </div>
       <Button @click="handleSubmit" variant="accent" size="s" iconPrefix="send"></Button>
     </div>

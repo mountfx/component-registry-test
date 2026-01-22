@@ -2,8 +2,8 @@
 import { Presence } from "@ark-ui/vue/presence";
 import { Menu } from "@ark-ui/vue/menu";
 
-import Button from "@/components/button/Button.vue";
-import Icon from "@/components/icon/Icon.vue";
+import Button from "@/components/ui/button/Button.vue";
+import Icon from "@/components/ui/icon/Icon.vue";
 
 interface Item {
   label: string;
@@ -41,7 +41,7 @@ const props = defineProps<Props>();
               <Menu.TriggerItem class="item">
                 <Icon v-if="item.icon" :icon="item.icon" />
                 <span class="item-text">{{ item.label }}</span>
-                <Icon class="icon-drop-right" icon="drop_right" />
+                <Icon class="icon-drop-right" icon="drop-right" />
               </Menu.TriggerItem>
               <Presence :present="context.open" lazyMount unmountOnExit>
                 <Teleport to="body">

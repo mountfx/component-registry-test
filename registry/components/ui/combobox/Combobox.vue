@@ -3,8 +3,8 @@ import { Presence } from "@ark-ui/vue/presence";
 import { Combobox, useListCollection } from '@ark-ui/vue/combobox';
 import { useFilter } from '@ark-ui/vue/locale';
 
-import Button from "@/components/button/Button.vue";
-import Icon from "@/components/icon/Icon.vue";
+import Button from "@/components/ui/button/Button.vue";
+import Icon from "@/components/ui/icon/Icon.vue";
 
 const filters = useFilter({ sensitivity: 'base' });
 
@@ -36,11 +36,13 @@ const props = withDefaults(defineProps<{
       <Combobox.Label class="label" v-if="props.label">{{ props.label }}</Combobox.Label>
       <Combobox.Control class="input">
         <Combobox.Input placeholder="Select a framework" />
-        <Combobox.ClearTrigger :class="{ empty: context.hasSelectedItems }" v-if="context.hasSelectedItems" asChild>
-          <Button variant="transparent" :size="props.size" iconPrefix="close" />
+        <Combobox.ClearTrigger v-if="context.hasSelectedItems" asChild>
+          <Icon icon="close" class="interactive-label" :class="{ empty: context.hasSelectedItems }"></Icon>
+          <!-- <Button variant="transparent" :size="props.size" iconPrefix="close" /> -->
         </Combobox.ClearTrigger>
         <Combobox.Trigger v-else asChild>
-          <Button variant="transparent" :size="props.size" iconPrefix="drop_down" />
+          <Icon icon="drop-down" class="interactive-label"></Icon>
+          <!-- <Button variant="transparent" :size="props.size" iconPrefix="drop-down" /> -->
         </Combobox.Trigger>
       </Combobox.Control>
       <Presence :present="context.open" lazyMount unmountOnExit>
@@ -60,14 +62,35 @@ const props = withDefaults(defineProps<{
 </template>
 
 <style scoped>
+[data-scope="presence"] {
+  &[data-part="root"] {
+    display: contents;
+  }
+}
 [data-scope="combobox"] {
   &[data-part="control"] {
     border-radius: var(--border-radius);
     display: inline-flex;
     justify-content: space-between;
+    padding: var(--padding);
 
     .empty {
       --icon-color: var(--color-main);
+    }
+  }
+
+  &[data-part="trigger"], &[data-part="clear-trigger"] {
+    position: relative;
+    cursor: pointer;
+    --icon-color: var(--color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(var(--padding) * -1);
+      top: calc(var(--padding) * -1);
+      right: calc(var(--padding) * -1);
+      bottom: calc(var(--padding) * -1);
     }
   }
 
@@ -76,8 +99,10 @@ const props = withDefaults(defineProps<{
     width: 100%;
     border: none;
     outline: none;
-    padding-block: var(--padding);
-    padding-inline: calc(var(--padding) + 4px);
+    padding-inline: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   &[data-part="item-text"] {

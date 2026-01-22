@@ -16,6 +16,7 @@
     },
     {
       "name": "accordion",
+      "type": "registry:component",
       "dependencies": [
         "@ark-ui/vue",
         "motion-v"
@@ -23,45 +24,45 @@
       "registryDependencies": [
         "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/accordion/Accordion.vue",
+          "path": "registry/components/ui/accordion/Accordion.vue",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "button",
+      "type": "registry:component",
       "registryDependencies": [
         "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/button/Button.vue",
+          "path": "registry/components/ui/button/Button.vue",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "checkbox",
+      "type": "registry:component",
       "dependencies": [
         "@ark-ui/vue"
       ],
       "registryDependencies": [
         "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/checkbox/Checkbox.vue",
+          "path": "registry/components/ui/checkbox/Checkbox.vue",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "combobox",
+      "type": "registry:component",
       "dependencies": [
         "@ark-ui/vue"
       ],
@@ -69,22 +70,22 @@
         "https://mountfx.github.io/component-registry-test/r/button.json",
         "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/combobox/Combobox.vue",
+          "path": "registry/components/ui/combobox/Combobox.vue",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "icon",
+      "type": "registry:component",
       "registryDependencies": [
         "https://mountfx.github.io/component-registry-test/r/tokens.json"
       ],
       "files": [
         {
-          "path": "registry/components/icon/Icon.vue",
+          "path": "registry/components/ui/icon/Icon.vue",
           "type": "registry:component"
         },
         {
@@ -92,24 +93,24 @@
           "type": "registry:file",
           "target": "~/src/assets/icons.ts"
         }
-      ],
-      "type": "registry:component"
+      ]
     },
     {
       "name": "input",
+      "type": "registry:component",
       "dependencies": [
         "@ark-ui/vue"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/input/Input.vue",
+          "path": "registry/components/ui/input/Input.vue",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "menu",
+      "type": "registry:component",
       "dependencies": [
         "@ark-ui/vue"
       ],
@@ -117,39 +118,38 @@
         "https://mountfx.github.io/component-registry-test/r/button.json",
         "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/menu/Menu.vue",
+          "path": "registry/components/ui/menu/Menu.vue",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "select",
+      "type": "registry:component",
       "dependencies": [
         "@ark-ui/vue"
       ],
       "registryDependencies": [
         "https://mountfx.github.io/component-registry-test/r/icon.json"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/select/Select.vue",
+          "path": "registry/components/ui/select/Select.vue",
           "type": "registry:component"
         }
       ]
     },
     {
       "name": "toggle",
+      "type": "registry:component",
       "dependencies": [
         "@ark-ui/vue"
       ],
-      "type": "registry:component",
       "files": [
         {
-          "path": "registry/components/toggle/Toggle.vue",
+          "path": "registry/components/ui/toggle/Toggle.vue",
           "type": "registry:component"
         }
       ]

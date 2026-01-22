@@ -14,6 +14,9 @@ importers:
       motion-v:
         specifier: ^1.9.0
         version: 1.9.0(@vueuse/core@12.8.2(typescript@5.9.3))(vue@3.5.26(typescript@5.9.3))
+      poline:
+        specifier: ^0.13.0
+        version: 0.13.0
       vue:
         specifier: ^3.5.24
         version: 3.5.26(typescript@5.9.3)
@@ -2117,6 +2120,9 @@ packages:
 
   pkg-types@2.3.0:
     resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
+
+  poline@0.13.0:
+    resolution: {integrity: sha512-hCk9dG9QLW0mf1GvjnoepyHbvrnXWkVFhERhBclgRusNiedNvLgG7dRyetEwWMgMXn/yf02Pk4ewudxJRi2pzw==}
 
   postcss-less@6.0.0:
     resolution: {integrity: sha512-FPX16mQLyEjLzEuuJtxA8X3ejDLNGGEG503d2YGZR5Ask1SpDN8KmZUMpzCvyalWRywAn1n1VOA5dcqfCLo5rg==}
@@ -4989,6 +4995,8 @@ snapshots:
       confbox: 0.2.2
       exsolve: 1.0.8
       pathe: 2.0.3
+
+  poline@0.13.0: {}
 
   postcss-less@6.0.0(postcss@8.5.6):
     dependencies:

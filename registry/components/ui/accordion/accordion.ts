@@ -1,0 +1,5 @@
+export default {
+  name: "accordion",
+  dependencies: ["@ark-ui/vue", "motion-v"],
+  registryDependencies: ["icon"],
+};

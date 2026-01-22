@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from "@/components/button/Button.vue";
+import Button from "@/components/ui/button/Button.vue";
 </script>
 
 <template>
@@ -23,7 +23,7 @@ import Button from "@/components/button/Button.vue";
     </svg>
     </div>
     <div>
-      <Button variant="plain" align="space-between" iconPrefix="new_chat">New chat</Button>
+      <Button variant="plain" align="space-between" iconPrefix="new-chat">New chat</Button>
       <Button variant="plain" align="space-between" iconPrefix="search">Search</Button>
     </div>
   </div>

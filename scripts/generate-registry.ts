@@ -22,12 +22,6 @@ function getTokens() {
   ];
 }
 
-const FileSchema = z.object({
-  path: z.string(),
-  type: z.string(),
-  target: z.optional(z.string()),
-});
-
 const ComponentSchema = z.object({
   name: z.string(),
   dependencies: z.optional(z.array(z.string())),
@@ -36,53 +30,71 @@ const ComponentSchema = z.object({
       z.string().transform((value) => `https://mountfx.github.io/component-registry-test/r/${value}.json`),
     ),
   ),
-  files: z.optional(z.array(FileSchema)),
+  files: z.optional(z.array(
+    z.object({
+      path: z.string(),
+      type: z.string(),
+      target: z.optional(z.string()),
+    }),
+  )),
 });
 
-function getComponent(folder: fs.Dirent) {
-  const dir = path.join(folder.parentPath, folder.name);
-  let item: any = {};
-  let itemPath = "";
-  for (const file of fs.readdirSync(dir)) {
-    if (path.extname(file) === ".vue") {
-      itemPath = path.join("registry/components", folder.name, file);
-    }
-    if (path.extname(file) === ".json") {
-      const bytes = fs.readFileSync(path.join(dir, file), "utf8");
-      try {
-        item = ComponentSchema.parse(JSON.parse(bytes));
-      } catch (e) {
-        console.log("Failed to parse file:");
-        console.log(itemPath, "\n");
-        throw new Error(e);
-      }
-    }
-  }
-  item.type = "registry:component";
-  item.files = item.files ? item.files : [];
-  item.files = [{ path: itemPath, type: "registry:component" }, ...item.files];
+export type RegistryComponent = z.infer<typeof ComponentSchema>;
 
-  return item;
+async function getUiComponent(folder: fs.Dirent) {
+  const dir = path.join(folder.parentPath, folder.name);
+  const files = fs.readdirSync(dir);
+  const definitionFile = `${folder.name}.ts`;
+  const componentFile = files.find((f) => f.endsWith(".vue"));
+
+  if (!definitionFile || !componentFile) {
+    const errors: string[] = [];
+    if (!definitionFile) errors.push(`Component in ${dir} must contain a .ts file.`);
+    if (!componentFile) errors.push(`Component in ${dir} must contain a .vue file.`);
+    errors.map((e) => console.log(e, "\n"));
+    throw new Error("Aborted due to missing requirements.");
+  }
+
+  const module = await import(path.join(dir, definitionFile));
+  try {
+    const definition = ComponentSchema.parse(module.default);
+    return {
+      name: definition.name,
+      type: "registry:component",
+      dependencies: definition.dependencies,
+      registryDependencies: definition.registryDependencies,
+      files: [
+        {
+          path: path.join("registry/components/ui", folder.name, componentFile),
+          type: "registry:component",
+        },
+        ...(definition.files || []),
+      ],
+    };
+  } catch (e) {
+    console.log(`Failed to parse definition at location ${dir}.`);
+    throw new Error(e);
+  }
 }
 
-export function getComponents() {
-  const dir = path.join(process.cwd(), "registry/components");
+async function getUiComponents() {
+  const dir = path.join(process.cwd(), "registry/components/ui");
   const components: object[] = [];
   for (const folder of fs.readdirSync(dir, { withFileTypes: true })) {
     if (!folder.isDirectory()) continue;
-    components.push(getComponent(folder));
+    components.push(await getUiComponent(folder));
   }
   return components;
 }
 
-function generateRegistry() {
+async function generateRegistry() {
   const registry = {
     "$schema": "https://shadcn-vue.com/schema/registry.json",
     name: "konverto-lab-ui",
     homepage: "https://konverto.eu",
     items: [
       ...getTokens(),
-      ...getComponents(),
+      ...await getUiComponents(),
     ],
   };
 

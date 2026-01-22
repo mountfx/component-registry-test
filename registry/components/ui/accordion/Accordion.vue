@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion-v";
 import { useForwardProps } from "@ark-ui/vue";
 import { Accordion } from '@ark-ui/vue/accordion';
 
-import Icon from "@/components/icon/Icon.vue";
+import Icon from "@/components/ui/icon/Icon.vue";
 
 interface Props {
   items: { title: string; description: string };  
@@ -26,7 +26,7 @@ const forwarded = useForwardProps(props);
               <slot name="header" :item="item" />
             </span>
             <Accordion.ItemIndicator asChild>
-              <Icon :icon="context.expanded ? 'drop_up' : 'drop_down'" />
+              <Icon :icon="context.expanded ? 'drop-up' : 'drop-down'" />
             </Accordion.ItemIndicator>
           </Accordion.ItemTrigger>
           <AnimatePresence>

@@ -1,15 +1,15 @@
 <script setup>
-import Button from "@/components/button/Button.vue";
-import Input from "@/components/input/Input.vue";
-import Accordion from "@/components/accordion/Accordion.vue";
-import Select from "@/components/select/Select.vue";
-import Icon from "@/components/icon/Icon.vue";
-import Menu from "@/components/menu/Menu.vue";
-/* import Combobox from "@/components/combobox/Combobox.vue"; */
-import Checkbox from "@/components/checkbox/Checkbox.vue";
+import Button from "@/components/ui/button/Button.vue";
+import Input from "@/components/ui/input/Input.vue";
+import Accordion from "@/components/ui/accordion/Accordion.vue";
+import Select from "@/components/ui/select/Select.vue";
+import Icon from "@/components/ui/icon/Icon.vue";
+import Menu from "@/components/ui/menu/Menu.vue";
+import Combobox from "@/components/ui/combobox/Combobox.vue";
+import Checkbox from "@/components/ui/checkbox/Checkbox.vue";
 
-import Chat from "@/blocks/Chat.vue";
-import NavDrawer from "@/blocks/NavDrawer.vue";
+import Chat from "@/components/blocks/Chat.vue";
+import NavDrawer from "@/components/blocks/NavDrawer.vue";
 
 import Layout from "@/components/Layout.vue";
 import Palette from "./Palette.vue";
@@ -33,7 +33,7 @@ const menuItems = [
   {
     label: "Solid",
     value: "solid",
-    icon: "attach_file",
+    icon: "attach-file",
     items: [
       { label: "Hello", value: "hello" },
       { label: "World", value: "world" },
@@ -42,17 +42,17 @@ const menuItems = [
   {
     label: "Vue",
     value: "vue",
-    icon: "attach_file",
+    icon: "attach-file",
   },
   {
     label: "React",
     value: "react",
-    icon: "attach_file",
+    icon: "attach-file",
   },
   {
     label: "Zx",
     value: "zx",
-    icon: "attach_file",
+    icon: "attach-file",
   }
 ];
 </script>
@@ -69,22 +69,22 @@ const menuItems = [
             <h1>Konverto Lab Design System</h1>
             <h4>Component Registry</h4>
           </div>
-          <Menu :items="menuItems" size="m" iconPrefix="drop_down" />
+          <Menu :items="menuItems" size="m" iconPrefix="drop-down" />
         </div>
         <div class="ds-button">
-          <Button iconPrefix="attach_file" size="s" disabled>Hello</Button>
-          <Button iconPrefix="attach_file" size="m">Hello</Button>
-          <Button iconPrefix="attach_file" size="l">Hello</Button>
+          <Button iconPrefix="attach-file" size="s" disabled>Hello</Button>
+          <Button iconPrefix="attach-file" size="m">Hello</Button>
+          <Button iconPrefix="attach-file" size="l">Hello</Button>
         </div>
         <div class="ds-button">
-          <Button style="width: fit-content;" iconPrefix="attach_file" variant="surface" size="s"></Button>
-          <Button style="width: fit-content;" iconPrefix="attach_file" variant="surface" size="m"></Button>
-          <Button style="width: fit-content;" iconPrefix="attach_file" variant="surface" size="l"></Button>
+          <Button style="width: fit-content;" iconPrefix="attach-file" size="s"></Button>
+          <Button style="width: fit-content;" iconPrefix="attach-file" size="m"></Button>
+          <Button style="width: fit-content;" iconPrefix="attach-file" size="l"></Button>
         </div>
         <div class="ds-button">
-          <Button iconPrefix="attach_file" variant="solid" size="s">Hello</Button>
-          <Button iconPrefix="attach_file" variant="solid" size="m">Hello</Button>
-          <Button iconPrefix="attach_file" variant="solid" size="l">Hello</Button>
+          <Button iconPrefix="attach-file" variant="solid" size="s">Hello</Button>
+          <Button iconPrefix="attach-file" variant="solid" size="m">Hello</Button>
+          <Button iconPrefix="attach-file" variant="solid" size="l">Hello</Button>
         </div>
         <Accordion collapsible :items="accordionItems" :defaultValue="['Banana']">
           <template #header="{ item }">
@@ -95,7 +95,7 @@ const menuItems = [
           </template>
         </Accordion>
         <Chat :onSubmit="(text) => console.log(text)" />
-        <Button style="width: auto;" iconPrefix="chat" iconPostfix="drop_down" align="space-between">Hello</Button>
+        <Button style="width: auto;" iconPrefix="chat" iconPostfix="drop-down" align="space-between">Hello</Button>
         <div class="ds-checkbox">
           <Checkbox size="s" />
         </div>
@@ -109,11 +109,11 @@ const menuItems = [
           <Input style="width: 100%" label="Input" size="m" placeholder="I am a placeholder" error="hello" />
           <Input style="width: 100%" label="Input" size="l" placeholder="I am a placeholder" error="hello" />
         </div>
-        <!-- <div class="ds-combobox"> -->
-          <!-- <Combobox label="Combobox" size="s" /> -->
-          <!-- <Combobox label="Combobox" size="m" /> -->
-          <!-- <Combobox label="Combobox" size="l"/> -->
-        <!-- </div> -->
+        <div class="ds-combobox">
+          <Combobox label="Combobox" size="s" />
+          <Combobox label="Combobox" size="m" />
+          <Combobox label="Combobox" size="l"/>
+        </div>
         <Palette />
       </div>
     </template>
