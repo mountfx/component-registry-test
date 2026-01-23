@@ -54,7 +54,11 @@ const forwarded = useForwardProps(props);
     display: flex;
     flex-direction: column;
     position: relative;
-    border-bottom: 1px solid var(--color-main-5);
+    border-bottom: 1px solid var(--color-main-4);
+
+    &:first-of-type {
+      border-top: 1px solid var(--color-main-4);
+    }
 
     &[data-focus] {
       outline: none;
@@ -64,7 +68,7 @@ const forwarded = useForwardProps(props);
         position: absolute;
         height: 1px;
         width: 100%;
-        background-color: var(--color-main-3);
+        background-color: var(--color-main-6);
       }
 
       &::before {
@@ -76,12 +80,8 @@ const forwarded = useForwardProps(props);
       }
 
       & [data-part="item-indicator"] {
-        --icon-color: var(--color-main);
+        --icon-color: var(--color-main-8);
       }
-    }
-
-    &:first-of-type {
-      border-top: 1px solid var(--color-main-5);
     }
   }
 
@@ -99,7 +99,7 @@ const forwarded = useForwardProps(props);
 
     &:hover {
       & [data-part="item-indicator"] {
-        --icon-color: var(--color-main);
+        --icon-color: var(--color-main-8);
       }
     }
   }
@@ -109,7 +109,7 @@ const forwarded = useForwardProps(props);
   }
 
   &[data-part="item-indicator"] {
-    --icon-color: var(--color-main-3);
+    --icon-color: var(--color-main-5);
   }
 }
 </style>

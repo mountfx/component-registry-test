@@ -91,7 +91,7 @@ const props = defineProps<Props>();
 }
 
 .icon-drop-right {
-  --icon-color: var(--color-main-3);
+  --icon-color: var(--color-main-6);
 }
 
 .item-text {

@@ -41,52 +41,6 @@ const ComponentSchema = z.object({
 
 export type RegistryComponent = z.infer<typeof ComponentSchema>;
 
-async function getUiComponent(folder: fs.Dirent) {
-  const dir = path.join(folder.parentPath, folder.name);
-  const files = fs.readdirSync(dir);
-  const definitionFile = `${folder.name}.ts`;
-  const componentFile = files.find((f) => f.endsWith(".vue"));
-
-  if (!definitionFile || !componentFile) {
-    const errors: string[] = [];
-    if (!definitionFile) errors.push(`Component in ${dir} must contain a .ts file.`);
-    if (!componentFile) errors.push(`Component in ${dir} must contain a .vue file.`);
-    errors.map((e) => console.log(e, "\n"));
-    throw new Error("Aborted due to missing requirements.");
-  }
-
-  const module = await import(path.join(dir, definitionFile));
-  try {
-    const definition = ComponentSchema.parse(module.default);
-    return {
-      name: definition.name,
-      type: "registry:ui",
-      dependencies: definition.dependencies,
-      registryDependencies: definition.registryDependencies,
-      files: [
-        {
-          path: path.join("registry/components/ui", folder.name, componentFile),
-          type: "registry:ui",
-        },
-        ...(definition.files || []),
-      ],
-    };
-  } catch (e) {
-    console.log(`Failed to parse definition at location ${dir}.`);
-    throw new Error(e);
-  }
-}
-
-async function getUiComponents() {
-  const dir = path.join(process.cwd(), "registry/components/ui");
-  const components: object[] = [];
-  for (const folder of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (!folder.isDirectory()) continue;
-    components.push(await getUiComponent(folder));
-  }
-  return components;
-}
-
 const lookup = {
   "ui": "registry:ui",
   "blocks": "registry:block",
@@ -154,7 +108,6 @@ async function generateRegistry() {
     homepage: "https://konverto.eu",
     items: [
       ...getTokens(),
-      // ...await getUiComponents(),
       ...await getComponents(),
     ],
   };

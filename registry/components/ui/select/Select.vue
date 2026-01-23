@@ -13,6 +13,8 @@ const props = withDefaults(defineProps<{
   multiple?: boolean;
   size?: "m";
   items: { label: string, value: string, disabled?: boolean }[];
+  onChange?: (value: string[]) => void;
+  defaultValue?: string[];
 }>(), {
   size: "m",
 });
@@ -23,7 +25,7 @@ const collection = createListCollection({ items: props.items });
 <template>
   <Field.Root class="field">
     <Field.Label class="label" v-if="props.label">{{ props.label }}</Field.Label>
-    <Select.Root :multiple="multiple" :data-size="props.size" :collection="collection">
+    <Select.Root :defaultValue="props.defaultValue" @value-change="(e) => props.onChange?.(e.value)" :multiple="multiple" :data-size="props.size" :collection="collection">
       <Select.Context v-slot="context">
         <Select.Control>
           <Select.Trigger class="input" :data-size="props.size" tabindex="0" :data-empty="context.empty">
@@ -61,15 +63,17 @@ const collection = createListCollection({ items: props.items });
 <style scoped>
 [data-scope="select"] {
   &[data-placeholder-shown] {
-    color: var(--color-main-3);
+    color: var(--color-main-6);
   }
 
   &[data-part="content"] {
     width: var(--reference-width);
   }
 
-  &[data-part="item-indicator"][data-state="checked"] {
-    display: flex;
+  &[data-part="item-indicator"] {
+    &[data-state="checked"] {
+      display: flex;
+    }
   }
 
   &[data-part="trigger"] {
@@ -81,7 +85,7 @@ const collection = createListCollection({ items: props.items });
     border-radius: var(--border-radius);
 
     &[data-empty="true"] {
-      --icon-color: var(--color-main-2);
+      --icon-color: var(--color-main-6);
     }
   }
 

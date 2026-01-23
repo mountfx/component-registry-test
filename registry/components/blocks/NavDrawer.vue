@@ -36,8 +36,8 @@ import Button from "@/components/ui/button/Button.vue";
   flex-direction: column;
   gap: 12px;
 
-  --logo-kon-color: var(--color-main);
-  --logo-dash-color: var(--color-accent);
+  --logo-kon-color: var(--color-main-12);
+  --logo-dash-color: var(--color-accent-12);
 
   svg {
     height: 24px;

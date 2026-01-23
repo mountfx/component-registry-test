@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Button from "@/components/ui/button/Button.vue";
 import Input from "@/components/ui/input/Input.vue";
 import Accordion from "@/components/ui/accordion/Accordion.vue";
@@ -10,9 +10,12 @@ import Checkbox from "@/components/ui/checkbox/Checkbox.vue";
 
 import Chat from "@/components/blocks/chat/Chat.vue";
 import NavDrawer from "@/components/blocks/NavDrawer.vue";
+import Theme from "@/components/blocks/theme/Theme.vue";
 
 import Layout from "@/components/Layout.vue";
 import Palette from "./Palette.vue";
+
+import { useTheme } from "@/components/lib/use-theme.ts";
 
 const selectItems = [
   { label: 'React', value: 'react' },
@@ -55,6 +58,82 @@ const menuItems = [
     icon: "attach-file",
   }
 ];
+
+useTheme({
+  main: "#0A1E12",
+  accent: "#7931E8",
+  ambient: "#F2F4F4",
+}, {
+  interpolate: "ease-in-out-sine",
+});
+
+const themes = [
+  {
+    value: "konverto-lab",
+    label: "Konverto Lab",
+    colors: {
+      main: "#0A1E12",
+      accent: "#7931E8",
+      ambient: "#F2F4F4",
+    },
+    interpolation: "ease-in-out-sine",
+  },
+  {
+    value: "konverto-lab-dark",
+    label: "Konverto Lab (Dark)",
+    colors: {
+      main:"#F2F4F4",
+      accent: "#7931E8",
+      ambient: "#0A1E12",
+    },
+    interpolation: "ease-in-out-sine",
+  },
+  {
+    value: "rvs",
+    label: "Raiffeisen",
+    colors: {
+      main: "#284A51",
+      accent: "#FCCE4D",
+      ambient: "#FFFFFF",
+    },
+    interpolation: "ease-in-out-sine",
+  },
+  {
+    value: "rvs-dark",
+    label: "Raiffeisen (Dark)",
+    colors: {
+      main: "#FFFFFF",
+      accent: "#FCCE4D",
+      ambient: "#284A51",
+    },
+    interpolation: "ease-in-out-sine",
+  },
+  {
+    value: "athesia",
+    label: "Athesia",
+    colors: {
+      main: "#333333",
+      accent: "#F19601",
+      ambient: "#F5F5F5",
+    },
+    interpolation: "ease-in-out-sine",
+  },
+  {
+    value: "athesia-dark",
+    label: "Athesia (Dark)",
+    colors: {
+      main: "#F5F5F5",
+      accent: "#F19601",
+      ambient: "#333333",
+    },
+    interpolation: "ease-in-sine",
+  },
+];
+
+function setTheme(value: string[]) {
+  const theme = themes.find((theme) => theme.value === value[0]);
+  useTheme(theme.colors, { interpolate: theme.interpolation });
+}
 </script>
 
 <template>
@@ -67,10 +146,12 @@ const menuItems = [
         <div class="ds-header">
           <div>
             <h1>Konverto Lab Design System</h1>
-            <h4>Component Registry</h4>
+            <p>Component Registry</p>
           </div>
           <Menu :items="menuItems" size="m" iconPrefix="drop-down" />
         </div>
+        <Select style="max-width: 320px;" :onChange="setTheme" label="Theme" placeholder="Select a theme" :items="themes" />
+        <!-- <Theme /> -->
         <div class="ds-button">
           <Button iconPrefix="attach-file" size="s" disabled>Hello</Button>
           <Button iconPrefix="attach-file" size="m">Hello</Button>
@@ -121,10 +202,6 @@ const menuItems = [
 </template>
 
 <style scoped>
-h4 {
-  color: var(--color-main-3);  
-}
-
 .ds {
   max-width: 800px;
   margin: 0 auto;

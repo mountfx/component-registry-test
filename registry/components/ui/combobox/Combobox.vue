@@ -34,14 +34,14 @@ const props = withDefaults(defineProps<{
     @input-value-change="handleInputChange">
     <Combobox.Context v-slot="context">
       <Combobox.Label class="label" v-if="props.label">{{ props.label }}</Combobox.Label>
-      <Combobox.Control class="input">
+      <Combobox.Control class="input" :class="{ empty: !context.hasSelectedItems }">
         <Combobox.Input placeholder="Select a framework" />
         <Combobox.ClearTrigger v-if="context.hasSelectedItems" asChild>
-          <Icon icon="close" class="interactive-label" :class="{ empty: context.hasSelectedItems }"></Icon>
+          <Icon icon="close"></Icon>
           <!-- <Button variant="transparent" :size="props.size" iconPrefix="close" /> -->
         </Combobox.ClearTrigger>
         <Combobox.Trigger v-else asChild>
-          <Icon icon="drop-down" class="interactive-label"></Icon>
+          <Icon icon="drop-down"></Icon>
           <!-- <Button variant="transparent" :size="props.size" iconPrefix="drop-down" /> -->
         </Combobox.Trigger>
       </Combobox.Control>
@@ -73,16 +73,16 @@ const props = withDefaults(defineProps<{
     display: inline-flex;
     justify-content: space-between;
     padding: var(--padding);
+    --icon-color: var(--color-main-12);
 
-    .empty {
-      --icon-color: var(--color-main);
+    &.empty {
+      --icon-color: var(--color-main-6);
     }
   }
 
   &[data-part="trigger"], &[data-part="clear-trigger"] {
     position: relative;
     cursor: pointer;
-    --icon-color: var(--color);
 
     &::before {
       content: "";

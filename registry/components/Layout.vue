@@ -12,15 +12,13 @@
 <style scoped>
 .layout {
   --clamp: clamp(256px, 20vw, 312px);
-
-  background-color: var(--color-main-7);
 }
 
 .sidebar {
   width: var(--clamp);
   height: 100%;
   position: fixed;
-  box-shadow: 1px 0 0 0 var(--color-main-5);
+  box-shadow: 1px 0 0 0 var(--color-main-4);
 }
 
 .main {

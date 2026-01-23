@@ -47,11 +47,11 @@ function handleSubmit(e: KeyboardEvent) {
   box-shadow: inset 0 0 0 1px var(--color-main-4);
 
   &:hover {
-    box-shadow: inset 0 0 0 1px var(--color-main-3);
+    box-shadow: inset 0 0 0 1px var(--color-main-5);
   }
 
   &:has(*:focus) {
-    box-shadow: inset 0 0 0 1px var(--color-main-3), 0 0 0 4px var(--color-main-6);
+    box-shadow: inset 0 0 0 1px var(--color-main-5), 0 0 0 4px var(--color-main-3);
   }
 }
 

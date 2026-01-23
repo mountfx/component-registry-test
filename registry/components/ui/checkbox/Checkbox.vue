@@ -31,10 +31,10 @@ const props = withDefaults(defineProps<{
     gap: 8px;
     cursor: pointer;
     width: fit-content;
-    --background-color: var(--color-main-5);
+    --background-color: var(--color-main-4);
 
     &:hover {
-      --background-color: var(--color-main-3);    
+      --background-color: var(--color-main-5);    
     }
   }
 
@@ -60,7 +60,7 @@ const props = withDefaults(defineProps<{
     display: inline;
 
     &[data-state="checked"] {
-      color: var(--color-main);
+      color: var(--color-main-12);
     }
   }
 
@@ -74,17 +74,17 @@ const props = withDefaults(defineProps<{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    --icon-color: var(--color-main-7);
+    --icon-color: var(--color-main-1);
 
     &[data-focus-visible] {
-      --background-color: var(--color-main-4);
-      box-shadow: 0 0 0 4px var(--color-main-6);
+      --background-color: var(--color-main-5);
+      box-shadow: 0 0 0 4px var(--color-main-3);
     }
 
     &[data-state="checked"] {
-      --background-color: var(--color-main);
+      --background-color: var(--color-main-12);
       &[data-focus-visible] {
-        box-shadow: 0 0 0 4px var(--color-main-5);
+        box-shadow: 0 0 0 4px var(--color-main-3);
       }
     }
   }

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import * as tf from "./utils/timing-functions";
+import * as tf from "@/components/lib/timing-functions";
 
 function *palette(
-  color: string,
+  a: string,
+  b: string,
   options: {
     points: number,
     interpolate: (t: number) => t,
@@ -10,7 +11,7 @@ function *palette(
 ) {
   const len = options.points - 1;
   for (let i = len; i >= 0; i--) {
-    yield `color-mix(in oklab, ${color} ${options.interpolate(i / len) * 100}%, transparent)`;
+    yield `color-mix(in oklab, ${a} ${options.interpolate(i / len) * 100}%, ${b})`;
   }
 }
 
@@ -20,18 +21,27 @@ const options = {
 };
 
 const konvertoLab = {
-  main: palette("#0A1E12", options),
-  accent: palette("#7931E8", options),
+  main: palette("#0A1E12", "#F2F4F4", options),
+  accent: palette("#7931E8", "#F2F4F4", options),
+
+  mainAlpha: palette("#0A1E12", "transparent", options),
+  accentAlpha: palette("#7931E8", "transparent", options),
 };
 
 const rvs = {
-  main: palette("#284A51", options),
-  accent: palette("#FCCE4D", options),
+  main: palette("#284A51", "#FFFFFF", options),
+  accent: palette("#FCCE4D", "#FFFFFF", options),
+
+  mainAlpha: palette("#284A51", "transparent", options),
+  accentAlpha: palette("#FCCE4D", "transparent", options),
 };
 
 const athesia = {
-  main: palette("#666666", options),
-  accent: palette("#F19601", options),
+  main: palette("#666666", "#F5F5F5", options),
+  accent: palette("#F19601", "#F5F5F5", options),
+
+  mainAlpha: palette("#666666", "transparent", options),
+  accentAlpha: palette("#F19601", "transparent", options),
 };
 
 const colors = [
@@ -54,9 +64,6 @@ const colors = [
   <section>
     <h3>Konverto Lab</h3>
     <div class="palette">
-      <!-- <div class="range"> -->
-        <!-- <div class="color" v-for="color in colors.reverse()" :style="{ backgroundColor: color }"></div> -->
-      <!-- </div> -->
       <div class="range">
         <div class="color" v-for="color in konvertoLab.main" :style="{ backgroundColor: color }"></div>
       </div>

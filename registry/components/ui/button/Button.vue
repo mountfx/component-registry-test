@@ -73,23 +73,24 @@ button {
   }
 
   &[data-variant="accent"] {
-    --color: var(--color-white);
-    --background-color: var(--color-accent);
+    --color: var(--color-accent-1);
+    --background-color: var(--color-accent-12);
     --icon-color: var(--color);
 
     color: var(--color);
     background-color: var(--background-color);
 
     &:hover {
-      --background-color: var(--color-accent-1);
+      --background-color: var(--color-accent-9);
     }
 
     &:focus-visible {
-      --background-color: var(--color-accent-1);
+      --background-color: var(--color-accent-9);
+      box-shadow: 0 0 0 4px var(--color-accent-3);
     }
 
     &:active {
-      --background-color: var(--color-accent-2);
+      --background-color: var(--color-accent-8);
     }
 
     &:disabled {
@@ -99,24 +100,24 @@ button {
   }
 
   &[data-variant="solid"] {
-    --color: var(--color-main-7);
-    --background-color: var(--color-main);
+    --color: var(--color-main-1);
+    --background-color: var(--color-main-12);
     --icon-color: var(--color);
 
     color: var(--color);
     background-color: var(--background-color);
 
     &:hover {
-      --background-color: var(--color-main-1);
+      --background-color: var(--color-main-9);
     }
 
     &:focus-visible {
-      --background-color: var(--color-main-1);
-      box-shadow: 0 0 0 4px var(--color-main-5);
+      --background-color: var(--color-main-9);
+      box-shadow: 0 0 0 4px var(--color-main-3);
     }
 
     &:active {
-      --background-color: var(--color-main-2);
+      --background-color: var(--color-main-8);
     }
 
     &:disabled {
@@ -126,29 +127,29 @@ button {
   }
 
   &[data-variant="subtle"] {
-    --color: var(--color-main);
-    --background-color: var(--color-main-5);
+    --color: var(--color-main-12);
+    --background-color: var(--color-main-4);
     --icon-color: var(--color);
 
     color: var(--color);
     background-color: var(--background-color);
 
     &:hover {
-      --background-color: var(--color-main-4);
+      --background-color: var(--color-main-5);
     }
 
     &:focus-visible {
-      --background-color: var(--color-main-4);
-      box-shadow: 0 0 0 4px var(--color-main-6);
+      --background-color: var(--color-main-5);
+      box-shadow: 0 0 0 4px var(--color-main-3);
     }
 
     &:active {
-      --background-color: var(--color-main-3);
+      --background-color: var(--color-main-6);
     }
 
     &:disabled {
-      --color: var(--color-main-3);
-      --background-color: var(--color-main-6);
+      --color: var(--color-main-6);
+      --background-color: var(--color-main-3);
     }
   }
 
@@ -203,7 +204,7 @@ button {
   }
 
   &[data-variant="plain"] {
-    --color: var(--color-main);
+    --color: var(--color-main-12);
     --background-color: transparent;
     --icon-color: var(--color);
 
@@ -211,40 +212,40 @@ button {
     background-color: var(--background-color);
 
     &:hover {
-      --background-color: var(--color-main-6);
+      --background-color: var(--color-main-3);
     }
 
     &:focus-visible {
-      --background-color: var(--color-main-6);
+      --background-color: var(--color-main-3);
     }
 
     &:active {
-      --background-color: var(--color-main-5);
+      --background-color: var(--color-main-4);
     }
 
     &:disabled {
       --color: var(--color-main-3);
-      --background-color: var(--color-main-6);
+      --background-color: var(--color-main-2);
     }
   }
 
   &[data-variant="transparent"] {
-    --color: var(--color-main-1);
+    --color: var(--color-main-7);
     --icon-color: var(--color);
 
     color: var(--color);
 
     &:hover {
-      --color: var(--color-main-1);
+      --color: var(--color-main-9);
     }
 
     &:focus-visible {
-      background-color: var(--color-main-6);
-      --color: var(--color-main-1);
+      background-color: var(--color-main-3);
+      --color: var(--color-main-12);
     }
 
     &:active {
-      --color: var(--color-main);
+      --color: var(--color-main-12);
     }
   }
 }

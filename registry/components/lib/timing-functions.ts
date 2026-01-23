@@ -100,51 +100,34 @@ export function easeInOutCirc(t: number) {
     : (Math.sqrt(1 - Math.pow(-2 * t + 2, 2)) + 1) / 2;
 }
 
-export const c1 = 1.70158;
-export const c2 = c1 * 1.525;
+export const tf = {
+  "linear": linear,
 
-export function easeInBack(t: number) {
-  return (c1 + 1) * t * t * t - c1 * t * t;
-}
+  "ease-in-quad": easeInQuad,
+  "ease-out-quad": easeOutQuad,
+  "ease-in-out-quad": easeInOutQuad,
 
-export function easeOutBack(t: number) {
-  return 1 + (c1 + 1) * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
-}
+  "ease-in-cubic": easeInCubic,
+  "ease-out-cubic": easeOutCubic,
+  "ease-in-out-cubic": easeInOutCubic,
 
-export function easeInOutBack(t: number) {
-  return t < 0.5
-    ? (Math.pow(2 * t, 2) * ((c2 + 1) * 2 * t - c2)) / 2
-    : (Math.pow(2 * t - 2, 2) * ((c2 + 1) * (t * 2 - 2) + c2) + 2) / 2;
-}
+  "ease-in-quart": easeInQuart,
+  "ease-out-quart": easeOutQuart,
+  "ease-in-out-quart": easeInOutQuart,
 
-export function bounceOut(t: number) {
-  const n1 = 7.5625;
-  const d1 = 2.75;
+  "ease-in-quint": easeInQuint,
+  "ease-out-quint": easeOutQuint,
+  "ease-in-out-quint": easeInOutQuint,
 
-  if (t < 1 / d1) {
-    return n1 * t * t;
-  } else if (t < 2 / d1) {
-    t -= 1.5 / d1;
-    return n1 * t * t + 0.75;
-  } else if (t < 2.5 / d1) {
-    t -= 2.25 / d1;
-    return n1 * t * t + 0.9375;
-  } else {
-    t -= 2.625 / d1;
-    return n1 * t * t + 0.984375;
-  }
-}
+  "ease-in-sine": easeInSine,
+  "ease-out-sine": easeOutSine,
+  "ease-in-out-sine": easeInOutSine,
 
-export function easeOutBounce(t: number) {
-  return bounceOut(t);
-}
+  "ease-in-expo": easeInExpo,
+  "ease-out-expo": easeOutExpo,
+  "ease-in-out-expo": easeInOutExpo,
 
-export function easeInBounce(t: number) {
-  return 1 - bounceOut(1 - t);
-}
-
-export function easeInOutBounce(t: number) {
-  return t < 0.5
-    ? (1 - bounceOut(1 - 2 * t)) / 2
-    : (1 + bounceOut(2 * t - 1)) / 2;
-}
+  "ease-in-circ": easeInCirc,
+  "ease-out-circ": easeOutCirc,
+  "ease-in-out-circ": easeInOutCirc,
+};
